@@ -1,0 +1,3 @@
+/home/andrew/work/test/Task_2/build/CMakeFiles/task_2.dir
+/home/andrew/work/test/Task_2/build/CMakeFiles/edit_cache.dir
+/home/andrew/work/test/Task_2/build/CMakeFiles/rebuild_cache.dir
