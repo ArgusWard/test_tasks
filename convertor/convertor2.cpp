@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 void menu();
+void kilos();
+void meters();
+void seconds();
 void kilos ()
 {
     int k;
@@ -13,8 +16,6 @@ void kilos ()
     std::cout << "5. 1 funt (lb) = 0.453592 kg" << std::endl;
     std::cout << "6. 1 uncia (oz) = 0.0283495 kg" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    do
-    {
     cin >> k;
     switch (k)
     {
@@ -53,13 +54,21 @@ void kilos ()
         break;
     default:
         std::cout << "Nepravilniy nomer punkta." << std::endl;
+        kilos();
         break;
     }
     std::cout << "1. Vibrat druguyu velichinu." << std::endl;
     std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
     cin >> k;
-    } while (k!=2);
-    menu();
+    switch (k)
+    {
+    case 1:
+        kilos();
+        break;
+    case 2:
+        menu();
+        break;
+    }
 }
 void meters()
 {
@@ -73,8 +82,6 @@ void meters()
     std::cout << "5. 1 milimetr (mm) = 0.001 m" << std::endl;
     std::cout << "6. 1 fut (ft) = 0.3048 m" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    do
-    {
     cin >> k;
     switch (k)
     {
@@ -113,13 +120,18 @@ void meters()
         break;
     default:
         std::cout << "Nepravilniy nomer punkta." << std::endl;
+        meters();
         break;
     }
-    std::cout << "1. Vibrat druguyu velichinu." << std::endl;
-    std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
-    cin >> k;
-    } while (k!=2);
-    menu();
+    switch (k)
+    {
+    case 1:
+        meters();
+        break;
+    case 2:
+        menu();
+        break;
+    }
 }
 void seconds()
 {
@@ -133,8 +145,6 @@ void seconds()
     std::cout << "5. 1 sekunda (s) = 1 s" << std::endl;
     std::cout << "6. 1 milisekunda (ms) = 0.001 s" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    do
-    {
     cin >> k;
     switch (k)
     {
@@ -173,13 +183,21 @@ void seconds()
         break;
     default:
         std::cout << "Nepravilniy nomer punkta." << std::endl;
+        seconds();
         break;
     }
     std::cout << "1. Vibrat druguyu velichinu." << std::endl;
     std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
     cin >> k;
-    } while (k!=2);
-    menu();
+    switch (k)
+    {
+    case 1:
+        seconds();
+        break;
+    case 2:
+        menu();
+        break;
+    }
 }
 void menu()
 {
@@ -208,6 +226,7 @@ void menu()
             break;
         default:
         std::cout << "Nepravilniy nomer punkta. Povtorite vvod" << std::endl;
+        menu();
         break;
     }
     } while (k!=4);    
