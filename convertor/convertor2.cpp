@@ -244,9 +244,8 @@ void menu()
     }
 }
 }
-using namespace calc;
 int main()
 {
-    menu();
+    calc::menu();
     return 0;
 }
