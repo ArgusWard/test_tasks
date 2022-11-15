@@ -1,9 +1,21 @@
 #include <iostream>
-using namespace std;
+namespace calc
+{
 void menu();
-void kilos();
-void meters();
-void seconds();
+int getnumber()
+{
+    int v;
+    std::cin >> v;
+        while (std::cin.fail() || std::cin.get() != '\n')
+        {
+        std::cout << "Nekorrektnie dannie. Povtorite vvod" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(99999, '\n');
+        std::cin.sync();
+        std::cin >> v;
+        }
+        return v;
+}
 void kilos ()
 {
     int k;
@@ -16,37 +28,37 @@ void kilos ()
     std::cout << "5. 1 funt (lb) = 0.453592 kg" << std::endl;
     std::cout << "6. 1 uncia (oz) = 0.0283495 kg" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    cin >> k;
+    k=getnumber();
     switch (k)
     {
     case 1:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " t = " << h*1000 << " kg." << std::endl;
         break;
     case 2:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " kg = " << h << " kg." << std::endl;
         break;
     case 3:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " g = " << h/1000 << " kg." << std::endl;
         break;
     case 4:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " ct = " << h*0.0002 << " kg." << std::endl;
         break;
     case 5:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " lb = " << h*0.453592 << " kg." << std::endl;
         break;
     case 6:
         std::cout << "Vvedite ves:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " oz = " << h*0.0283495 << " kg." << std::endl;
         break;
     case 7:
@@ -59,7 +71,7 @@ void kilos ()
     }
     std::cout << "1. Vibrat druguyu velichinu." << std::endl;
     std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
-    cin >> k;
+    k=getnumber();
     switch (k)
     {
     case 1:
@@ -82,37 +94,37 @@ void meters()
     std::cout << "5. 1 milimetr (mm) = 0.001 m" << std::endl;
     std::cout << "6. 1 fut (ft) = 0.3048 m" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    cin >> k;
+    k=getnumber();
     switch (k)
     {
     case 1:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " km = " << h*1000 << " m." << std::endl;
         break;
     case 2:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " m = " << h << " m." << std::endl;
         break;
     case 3:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " dm = " << h/10 << " m." << std::endl;
         break;
     case 4:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " sm = " << h/100 << " m." << std::endl;
         break;
     case 5:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " mm = " << h/1000 << " m." << std::endl;
         break;
     case 6:
         std::cout << "Vvedite dlinu:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " ft = " << h*0.3048 << " m." << std::endl;
         break;
     case 7:
@@ -123,6 +135,9 @@ void meters()
         meters();
         break;
     }
+    std::cout << "1. Vibrat druguyu velichinu." << std::endl;
+    std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
+    k=getnumber();
     switch (k)
     {
     case 1:
@@ -145,37 +160,37 @@ void seconds()
     std::cout << "5. 1 sekunda (s) = 1 s" << std::endl;
     std::cout << "6. 1 milisekunda (ms) = 0.001 s" << std::endl;
     std::cout << "7. Vozvrat k prediduschemu menu." << std::endl;
-    cin >> k;
+    k=getnumber();
     switch (k)
     {
     case 1:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " w = " << h*604800 << " m." << std::endl;
         break;
     case 2:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " d = " << h*86400 << " s." << std::endl;
         break;
     case 3:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " h = " << h*3600 << " s." << std::endl;
         break;
     case 4:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " min = " << h*60 << " s." << std::endl;
         break;
     case 5:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " s = " << h << " s." << std::endl;
         break;
     case 6:
         std::cout << "Vvedite vremya:" << std::endl;
-        cin >> h;
+        h=getnumber();
         std::cout << h << " ms = " << h/1000 << " s." << std::endl;
         break;
     case 7:
@@ -188,7 +203,7 @@ void seconds()
     }
     std::cout << "1. Vibrat druguyu velichinu." << std::endl;
     std::cout << "2. Vibrat drugie edinitsi izmereniya." << std::endl;
-    cin >> k;
+    k=getnumber();
     switch (k)
     {
     case 1:
@@ -207,9 +222,7 @@ void menu()
     std::cout << "2. metri" << std::endl;
     std::cout << "3. sekundi" << std::endl;
     std::cout << "4. vihod" << std::endl;
-    do
-    {
-    cin >> k;
+    k=getnumber();
     switch(k)
     {
         case 1:
@@ -225,12 +238,13 @@ void menu()
             std::cout << "Programma zavershina" << std::endl;
             break;
         default:
-        std::cout << "Nepravilniy nomer punkta. Povtorite vvod" << std::endl;
-        menu();
-        break;
+            std::cout << "Nepravilniy nomer punkta. Povtorite vvod" << std::endl;
+            menu();
+            break;
     }
-    } while (k!=4);    
 }
+}
+using namespace calc;
 int main()
 {
     menu();
