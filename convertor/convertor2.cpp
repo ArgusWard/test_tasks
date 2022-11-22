@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string.h>
-#include <clocale>
 #include <fstream>
 #include <ctime>
 const char separator[]=" /,\n\t";
@@ -379,7 +377,6 @@ int main(int argc, char *argv[])
     }
     else
     {
-        setlocale(LC_ALL,"");
         std::string cs, as;
         char ch = ' ';
         int u = 1;
